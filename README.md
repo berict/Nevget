@@ -1,4 +1,5 @@
 # Nevget Design
-Contains web design sources of Nevget
+##Contains web design sources of Nevget
 
-Hard working with friends ;)
+### Words from the designer
+> ##_Cyka blyat_
