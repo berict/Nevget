@@ -24,7 +24,7 @@ int forgetRate(int date_passed, int level) {
 	rate = (float)(1 - pow(e, -(date_passed / (1 * (pow(level, 2.42))))));
 	printf("Forget rate : %.3f / 1\n\n", rate);
 	// return in %
-	return rate;
+	return 0;
 }
 
 int interval(int today, int last_interval_date) {
