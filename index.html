@@ -18,13 +18,26 @@
 
     <div class="login-card">
     <br><img src="./image/nevget.png" width="200" alt="nevget"><br>
-    <h1>Never forget a thing, again.</h1><br><br>
+    <h1>Never forget a thing, again.</h1><br>
 
-  <!-- <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
+<!--Log in-->
+  <form id="log">
+    <span>email</span>
+    <input type="text" name="email" placeholder="Email">
+    <span>password</span>
+    <input type="password" name="pw" placeholder="Password">
     <input type="submit" name="login" class="login login-submit" value="login">
-  </form> -->
+  </form>
+
+<!--Sign in-->
+  <form id="sign" style="display:none">
+    <input type="text" name="email" placeholder="Email">
+    <input type="password" name="pw" placeholder="Password">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="age" placeholder="age"> <!--Need modification -->
+    <label><input type="checkbox" name="agreed" />I agree.</label><br>
+    <input type="submit" name="login" class="login login-submit" value="login">
+  </form>
 
   <div class="login-help">
     <a href="#">SIGN IN</a>  •  <a href="#">LOG IN</a>
@@ -42,6 +55,9 @@
 
 
     <script type="text/javascript">
+         /*Log in & Sign in*/
+
+
 
         /*TEXT UPDOWN*/
         $(function(){
