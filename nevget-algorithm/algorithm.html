@@ -1,0 +1,31 @@
+<html>
+    <script type="text/javascript">
+        var today = 1;
+        var itvl_date = 0;
+        var itvl = 1;
+        var e = 2.71828;
+        var rate = 100;
+        
+        function calcRate(date, itvl) {
+            rate = 100 - (Math.pow(e, (-1 * (date / Math.pow(itvl, p))))) * 100;
+            window.console.log(Math.pow(e, (-1 * (date / Math.pow(itvl, p)))));
+        }
+        
+        function calculate() {
+            calcRate(today - itvl_date, itvl);
+            document.getElementById("p").innerHTML = rate;
+            if(rate <= 90) {
+                window.console("send");
+                itvl++;
+                itvl_date = today;
+            }
+            today++;
+        }
+    </script>
+    <body>
+        <p id="p">
+        test
+        </p>
+        <button onClick="calculate()">cc</button>
+    </body>
+</html>
