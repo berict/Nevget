@@ -7,8 +7,7 @@ float level = 1;
 float last_interval_date = 0;
 // https://www.desmos.com/calculator/lhwfudnxsj
 
-void sendEmail(int level, int x, int age)
-{
+void sendEmail(int level, int x, int age) {
 	printf("==========================\n");
 	printf("Email sent : on level %d\n", level - 1);
 	printf("           : at day %.3f\n", (x + last_interval_date));
@@ -16,21 +15,18 @@ void sendEmail(int level, int x, int age)
 	printf("==========================\n\n");
 }
 
-void main()
-{
+void main() {
 	int age = 20;
 	float e = 2.71828182;
 
 	printf("Input any other key to exit\n\n");
 
-	while (age <= 0)
-	{
+	while (age <= 0) {
 		printf("Enter correct user age : ");
 		scanf("%d", &age);
 	}
 
-	while (1)
-	{
+	while (1) {
 		printf("time %.2f\n", (x + last_interval_date));
 		y = pow(e, -(x / (1.898 * (pow(level, 2)))));
 		printf("Forget y : %f / 1\n\n", y);
