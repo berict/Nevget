@@ -1,0 +1,49 @@
+Never forget a thing, again.
+
+This is a long-term memory reminder. Do you
+have something to remember forever? 
+You are in the right place.
+
+Get your memories together.
+
+Privacy and Terms
+
+By choosing “I agree” below you agree to Nevget’s Terms of Service.
+
+You also agree to our Privacy Policy, which describes the personal 
+information we collect, the purposes for which we collect it, 
+and how it is stored, including these key points:
+
+Data we collect and use when you use Nevget
+	- When you sign up for a Nevget account we’ll ask for personal information, 
+	  like your name and email address, to store with your account.
+	- When you make or edit a reminder, for example, we may collect and use 
+	  information about that activity – including information like the time you
+	  created the reminder, reminder’s title, and hints.
+
+You can change and remove your personal information anytime on the Account 
+Settings.
+
+Why we process it
+We process this data for the purposes described in our policy, including to:
+	- Help our services deliver more useful, customized content such as more 
+	  relevant delayed notifications;
+	- Improve the quality of our services and develop new ones;
+	- Conduct analytics and measurement to understand how our services are 
+	  used.
+
+Storage of data
+Nevget makes reasonable efforts to provide users with ways to access their 
+personal information and to delete such data upon request. After a user requests 
+that information be deleted, copies of the data will expire and be subsequently 
+overwritten, unless a copy must be retained for legitimate business purposes or 
+to comply with the law.
+
+
+E-mail format is incorrect.
+
+You can’t leave this empty.
+
+[insert password restrictions]
+
+These passwords don't match. Try again?
