@@ -25,10 +25,16 @@ body {
 }
 .up{display: none; cursor:pointer; float:right;}
 .down{cursor:pointer; float:right;}
-.log{display: none}
-.sign{display: none}
-.fsize{float:right;}
-.fsize a{color:#000}
+
+.log,
+.sign,
+.edit,
+.list,
+.setting,
+.add{
+display: none}
+.fsize{float:right;margin-right: -20px}
+.fsize a{color:#000;}
 
 input[type="text"],input[type="password"]
 {
@@ -68,8 +74,7 @@ margin-bottom: 15%
 
 .login-card {
   position: absolute; left: 50%; top:50%;  transform:translate(-50%, -50%);
-  padding: 50px 40px 30px 40px;
-  background-color: #F7F7F7;
+  padding: 50px 40px 20px 40px;
   background-color : rgba(247, 247, 247, 0.7);
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -128,7 +133,7 @@ display: table; margin-left: auto; margin-right: auto;
 .login-card a {
   text-decoration: none;
   color: #777;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
   display: inline-block;
   opacity: 0.6;
@@ -146,6 +151,36 @@ display: table; margin-left: auto; margin-right: auto;
   margin-top: 5%;
 }
 
+.accordion {
+ margin:10px -40px 50px -40px; 
+  overflow: hidden;
+}
+
+.accordion .item .heading {
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  color: #000;
+  padding-left: 15px;
+  background: rgba(247, 247, 247, 0.5) url('arrow.png') no-repeat;
+  background-position: right 20px top -95px;
+  border-bottom: 2px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.accordion .item.open .heading,
+.accordion .item:last-child .heading { border: 0; }
+
+.accordion .item.open .heading { background-position: right 20px top -5px; }
+
+.accordion .item .content {
+  display: none;
+  padding: 15px;
+  background: rgba(247, 247, 247, 0.5);
+  font-size: 14px;
+  border-bottom: 2px solid #d0d0d0;
+}
 article,
 aside,
 details,
@@ -3412,7 +3447,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-link {
   font-weight: bold;
-  font-size:15px;
+  font-size:17px;
   color:#1e90ff;
   border-radius: 0;
 }
