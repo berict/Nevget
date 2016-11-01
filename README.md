@@ -2,12 +2,19 @@
 ### Current status on developing, only README file
 
 #### Team Nevget
-* Sunrin Internet Highschool *
-* 10524 Nathan Cho *
-* 10508 Younjune Kim *
-* 10512 Taekseo Kim *
-* 10514 Junhuk Song *
-* 10517 Sungjin Russian cyka blyat *
+
+__Sunrin Internet Highschool__
+
+*__10524 Nathan Cho__*
+
+*__10508 Younjune Kim__*
+
+*__10512 Taekseo Kim__*
+
+*__10514 Junhuk Song__*
+
+*__10517 Sungjin Russian cyka blyat__*
+
 
 - 16/10/05 Idea initializing
 - 16/10/06 Finialized team members
