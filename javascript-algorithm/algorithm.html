@@ -13,12 +13,15 @@
         var y = 0;
         var level = 1;
         var last_interval_date = 0;
+        
+        var score = prompt("Enter game score 0 <= x <= 10");
+        score = 1.423 + (score * 0.095);
 
         function calculate() {
             var age = 20;
             var e = 2.71828182;
 
-            y = Math.pow(e, -(x / (1.898 * (Math.pow(level, 2)))));
+            y = Math.pow(e, -(x / (score * (Math.pow(level, 2)))));
             document.getElementById("result").innerHTML = "Day " + Math.round((x + last_interval_date) * 10) + ", Rate " + y.toFixed(5);
             drawCanvas();
 
