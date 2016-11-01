@@ -10,12 +10,12 @@ mongoose.connect('mongodb://localhost:27017/ovs');
 var UserSchema = new mongoose.Schema({
     email: {type: String},
     name: {type: String},
-    age: {type: Number},
+    score: {type: Number, min:0, max:10, defualt: 5},
     notify_time: {type: Date},
     pw:{type: String}
 });
 
-var User_Reminder = new mongoose.Schema({
+var reminder = new mongoose.Schema({
     id: {type: String},
     rem_id: {type: String},
     user_id: {type: String}
