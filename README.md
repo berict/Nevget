@@ -36,6 +36,6 @@ __Sunrin Internet Highschool__
 
 1. Email sending method (server)
 2. Form design
-3. Favicon design
+~~3. Favicon design~~
 4. Localization
 5. Proposal finish
