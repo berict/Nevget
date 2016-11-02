@@ -33,9 +33,3 @@ __Sunrin Internet Highschool__
 - 16/10/28 Service character design, front keyword input (reminder)
 - 16/10/29 Finalized character design, game proposal selected
 - 16/10/30 Initialized game proposal
-
-1. Email sending method (server)
-2. Form design
-3. ~~Favicon design~~
-4. Localization
-5. Proposal finish
