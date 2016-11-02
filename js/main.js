@@ -166,3 +166,26 @@
         }
     }
     setInterval(updateGradient, 10);
+ 
+/*Carousel*/
+$('.carousel').carousel({
+pause: true,
+interval: false
+});
+
+$(function () {
+var CB = new Array("#f8da76","#c7ffb6","#eda5f7");
+var a= 0;
+var currentIndex = $('div.active').index();
+
+$('.carousel').on('slid.bs.carousel', function () {
+  currentIndex = $('div.active').index();
+  if(currentIndex==0)
+      $(".login-card.carousel.slide").animate({backgroundColor: CB[0]}, 300); 
+  else if(currentIndex==1)
+      $(".login-card.carousel.slide").animate({backgroundColor: CB[1]}, 300); 
+  else if(currentIndex==2)
+      $(".login-card.carousel.slide").animate({backgroundColor: CB[2]}, 300); 
+});
+    
+});

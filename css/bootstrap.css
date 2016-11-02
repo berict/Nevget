@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,500i');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /*!
  * Bootstrap v3.3.2 (http://getbootstrap.com)
@@ -12,6 +12,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
         height: 100%;
+    font-weight: 500;
 }
 body {
   width: 100%;
@@ -65,7 +66,9 @@ label input[type="checkbox"]{
 margin-bottom: 15%
 }
 
-
+.login-card .carousel .slide{
+    background: #c7ffb6
+}
 
 #logo {
   width: 100%;
@@ -83,17 +86,36 @@ margin-bottom: 15%
 }
 
 .login-card h1 {
-  font-weight: 100;
+  font-weight: 300;
   text-align: center;
   font-size: 2em;
 }
-
+.carousel-indicators{
+        display: none;
+    }
 @media (min-width:300px) and (max-width:767px) {
+    
+    .login-card carousel slide{
+        padding: 23% 35px 20px 35px;
+        width: 100%;
+        height: 100%
+    }
+    .login-card carousel slide h1{
+        font-size: 1em;
+    }
      .login-card h1 {
-        font-size: 1.2em;}
+         margin: 0% -6% 0 -6%;
+        font-size: 1.35em;}
     body {
         font-size: 13px;
     }
+    .carousel-indicators{
+        display: block;
+    }
+    #mob{
+        display: none;
+    }
+    
 }
 
 .login-card img {
@@ -134,10 +156,9 @@ display: table; margin-left: auto; margin-right: auto;
 .login-card a {
   text-decoration: none;
   color: #777;
-  font-weight: bold;
   text-align: center;
   display: inline-block;
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity ease 0.5s;
 }
 
@@ -1263,7 +1284,7 @@ a {
 a:hover,
 a:focus {
   color: #23527c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -3232,9 +3253,11 @@ fieldset[disabled] .btn-default.active {
   background-color: #333;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  padding: 2% 5% 2% 5%;
+  color: #fff !important;
+  font-weight: bold;
+  background-color: #239aff;
+  border-color: #239aff;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -3480,7 +3503,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
   color: #23527c;
-  text-decoration: underline;
+  text-decoration: none;
   background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -6220,13 +6243,17 @@ font-size: 13px;
   border-left-color: #fff;
 }
 .carousel {
-  position: relative;
+  position:absolute;
 }
 .carousel-inner {
+  padding: 0 15% 0 15%; 
   position: relative;
   width: 100%;
   overflow: hidden;
 }
+@media (min-width:300px) and (max-width:767px) {
+    .carousel-inner {
+        padding: 1% }}
 .carousel-inner > .item {
   position: relative;
   display: none;
@@ -6301,10 +6328,11 @@ font-size: 13px;
 }
 .carousel-control {
   position: absolute;
+  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 15%;
+  width: 40%;
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -6313,21 +6341,11 @@ font-size: 13px;
   opacity: .5;
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control.right {
   right: 0;
   left: auto;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control:hover,
@@ -6401,16 +6419,15 @@ font-size: 13px;
   background-color: #fff;
 }
 .carousel-caption {
-  position: absolute;
   right: 15%;
   bottom: 20px;
   left: 15%;
+  margin-top: 20%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
 .carousel-caption .btn {
   text-shadow: none;
