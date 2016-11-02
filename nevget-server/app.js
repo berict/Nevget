@@ -6,10 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mailer = require('express-mailer');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/ovs');
+mongoose.connect('mongodb://localhost:27017/nevget');
 
 var UserSchema = new mongoose.Schema({
-    email: {type: String},
+    email: {type: String, unique: true},
     name: {type: String},
     score: {type: Number, min:0, max:10, defualt: 5},
     notify_time: {type: Date},
@@ -28,6 +28,7 @@ var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var auth = require('./routes/auth');
 var after = require('./routes/after');
 
 // view engine setup
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/after', after);
 app.use('/users', users);
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
