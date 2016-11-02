@@ -1,13 +1,33 @@
+    var agree = false;
+    var pw_check = false;
+
     function yes() {
         document.getElementById("yn").checked = true;
+        agree = true;
+        if(!pw_check){
+          $('#err').html("비밀번호를 입력해주세요");
+        }
+        if(agree && pw_check){
+          $('#err').html("");
+          $("input[name=sign]").attr("disabled",false);
+        }
     }
 
     function no() {
         document.getElementById("yn").checked = false;
+        $("input[name=sign]").attr("disabled", true);
+
+        if(!pw_check){
+          $('#err').html("비밀번호를 입력해주세요");
+        }else{
+          $('#err').html("약관에 동의해주세요");
+        }
+        agree = false;
     }
 
     function check(){
        document.getElementById("yn").checked = false;
+       agree = false;
     }
 
     /*Log in & Sign in - To be able to move*/
@@ -170,3 +190,34 @@
         }
     }
     setInterval(updateGradient, 10);
+
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope, $http) {
+
+        $scope.$watch('pw + pw_c', function(value) {
+            if ($scope['pw'] === "" && $scope['pw_c'] === "" || $scope['pw'] === undefined && $scope['pw_c'] === undefined) {
+                $('#err').html("비밀번호를 입력해주세요");
+            } else if ($scope['pw'] == $scope['pw_c']) {
+                pw_check = true;
+                if (agree) {
+                    $('#err').html("");
+                    $("input[name=sign]").attr("disabled",false);
+                } else {
+                    $('#err').html("약관에 동의해주세요");
+                }
+            } else {
+                pw_check = false;
+                $('#err').html("비밀번호가 일치하지않습니다");
+                $("input[name=sign]").attr("disabled", true);
+            }
+        }, true);
+
+        if ($scope['pw'] == $scope['pw_c']) {
+            if (pw_check) {
+                $('#err').html("");
+            } else {
+                $('#err').html("약관에 동의해주세요");
+            }
+        }
+    });

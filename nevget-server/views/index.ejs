@@ -51,17 +51,19 @@
                       <input type="text" name="email" placeholder="Your e-mail" required="required" autocomplete="off">
                       <input type="password" ng-model="pw" name="pw" placeholder="Password" required="required" autocomplete="off">
                       <input type="password" ng-model="pw_c" placeholder="Confirm your Password" required="required" autocomplete="off">
-                      <h1 id="err"></h1>
+
+
                       <label>
                           <input type="checkbox" onclick="check()" ng-model="agreed" id="yn" name="agreed" data-toggle="modal" data-target="#at" />&nbsp;&nbsp; I agree to the Terms of Service</label>
                       <br>
+
                       <div class="fsize"><a class="btn btn-link M">CANCEL</a>
                           <input type="submit" name="sign" class="btn btn-link" value="SIGN IN" disabled>
                       </div>
+
+                      <h1 id="err" style="color:red;"></h1>
                     </form>
                 </div>
-
-                <script type="text/javascript" src="js/check_pw.js"></script>
 
 
                 <!-- main -->
