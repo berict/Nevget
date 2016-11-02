@@ -18,6 +18,11 @@ router.post('/reg', function(req, res) {
       user.save(function(err, data) {
           if (err) res.redirect('/');
           else{
+
+            req.session.regenerate(function() {
+                req.session.logined = user.name;
+            });
+
             res.redirect('/after');
           }
       });
@@ -36,7 +41,12 @@ router.post('/login', function(req, res) {
     Users.findOne({id: id, pw: pw}, function(err, user){
         if(err) res.redirect('/');
 
-        if(user) res.redirect('/after');
+        if(user){
+          req.session.regenerate(function() {
+              req.session.logined = user.name;
+          });
+          res.redirect('/after');
+        }
         else res.redirect('/');
     });
 });

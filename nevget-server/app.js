@@ -4,6 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var sessionstore = require('sessionstore');
+var store = sessionstore.createSessionStore();
+
 var mailer = require('express-mailer');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/nevget');
@@ -44,6 +48,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use( session( { store: store, secret: '앙기모띠', saveUninitialized: true}));
 
 app.use('/', routes);
 app.use('/after', after);
