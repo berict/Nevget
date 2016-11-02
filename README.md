@@ -35,4 +35,4 @@ __Sunrin Internet Highschool__
 - 16/10/30 Initialized game proposal
 - 16/10/31 Front welcome page designed
 - 16/11/01 Favicon design, brain score form, e-mail server settings / sending success!
-- 16/11/01 Favicon design finalized, UI/UX changes (font design, form fill-out design), responsive design
+- 16/11/02 Favicon design finalized, UI/UX changes (font design, form fill-out design), responsive design
