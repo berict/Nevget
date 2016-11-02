@@ -28,6 +28,7 @@ var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var after = require('./routes/after');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,6 +45,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/after', after);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

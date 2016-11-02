@@ -18,14 +18,14 @@
     <div id="logo"><div>
 
     <section class="login-card">
-    <br><img src="./image/nevget.png"  width="200" alt="nevget"><br>
+    <br><img src="/image/nevget.png"  width="200" alt="nevget"><br>
 
 
     <!--Log in-->
     <div class="log">
     <h1>Get your memories together.</h1><br>
 
-      <form method="post">
+      <form method="post" action="/auth/login">
       <div class="form-group">
       <input class="login-field" placeholder="Your e-mail" required="required" autocomplete="off" name="email" type="text">
       <input class="login-field" placeholder="Your password" required="required" autocomplete="off" name="pw" type="password">
@@ -40,11 +40,11 @@
     <!--Sign in-->
     <div class="sign">
     <h1>Get your memories together.</h1><br>
-      <form method="post">
+      <form method="post" action="/auth/sign in">
         <input type="text" name="name" placeholder="Name" required="required" autocomplete="off">
         <input type="text" name="email" placeholder="Your e-mail" required="required" autocomplete="off">
         <input type="password" name="pw" placeholder="Password" required="required" autocomplete="off">
-        <input type="password" name="pw" placeholder="Confirm your Password" required="required" autocomplete="off">
+        <input type="password" name="pw_c" placeholder="Confirm your Password" required="required" autocomplete="off">
 
         <label><input type="checkbox" id="yn" name="agreed" data-toggle="modal" data-target="#at"/>&nbsp;&nbsp; I agree to the Terms of Service</label><br>
         <div class="fsize"><a class="btn btn-link M">CANCEL</a>
@@ -88,35 +88,35 @@
       <div class="modal-body">
      <p>By choosing “I agree” below you agree to Nevget’s Terms of Service.</p>
 
-You also agree to our Privacy Policy, which describes the personal 
-information we collect, the purposes for which we collect it, 
+You also agree to our Privacy Policy, which describes the personal
+information we collect, the purposes for which we collect it,
 and how it is stored, including these key points:
-          
+
 <hr>
 
           <h4>Data we collect and use when you use Nevget</h4>
-	<p style="margin-left:4%">- When you sign up for a Nevget account we’ll ask for personal information, 
+	<p style="margin-left:4%">- When you sign up for a Nevget account we’ll ask for personal information,
           like your name and email address, to store with your account.</p>
-	<p style="margin-left:4%">- When you make or edit a reminder, for example, we may collect and use 
+	<p style="margin-left:4%">- When you make or edit a reminder, for example, we may collect and use
 	  information about that activity – including information like the time you
 	  created the reminder, reminder’s title, and hints.</p>
 
-You can change and remove your personal information anytime on the Account 
+You can change and remove your personal information anytime on the Account
 Settings.
 
           <h4>Why we process it</h4>
           <p>We process this data for the purposes described in our policy, including to:</p>
-	<p style="margin-left:4%">- Help our services deliver more useful, customized content such as more 
+	<p style="margin-left:4%">- Help our services deliver more useful, customized content such as more
         relevant delayed notifications;</p>
           <p style="margin-left:4%">- Improve the quality of our services and develop new ones;</p>
-	<p style="margin-left:4%">- Conduct analytics and measurement to understand how our services are 
+	<p style="margin-left:4%">- Conduct analytics and measurement to understand how our services are
         used.</p>
 
           <h4>Storage of data</h4>
-<p>Nevget makes reasonable efforts to provide users with ways to access their 
-personal information and to delete such data upon request. After a user requests 
-that information be deleted, copies of the data will expire and be subsequently 
-overwritten, unless a copy must be retained for legitimate business purposes or 
+<p>Nevget makes reasonable efforts to provide users with ways to access their
+personal information and to delete such data upon request. After a user requests
+that information be deleted, copies of the data will expire and be subsequently
+overwritten, unless a copy must be retained for legitimate business purposes or
           to comply with the law.</p>
       </div>
       <div class="modal-footer">
@@ -129,6 +129,6 @@ overwritten, unless a copy must be retained for legitimate business purposes or
  </div>
 </div>
         <script type="text/javascript" src="./js/main.js"></script>
-   
+
 </body>
 </html>
