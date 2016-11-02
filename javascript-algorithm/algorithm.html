@@ -3,45 +3,77 @@
     <p id="result">NULL</p>
     <br>
 
-    <button onclick="calculate()">Calculate</button>
+    <button onclick="startLoop()">Calculate</button>
     <br>
 
     <canvas id="canvas" width="1000" height="100" style="margin-top: 100px"></canvas>
 
     <script type="text/javascript">
+        var e = 2.71828182;
         var day = 0;
         var rate = 0;
         var level = 1;
         var last_interval_date = 0;
         
-        var score = prompt("Enter game score 0 <= x <= 10");
-        score = 1.423 + (score * 0.095);
+        //var score = prompt("Enter game score 1 <= x <= 10");
+        var score = 4;
+        score = 1.5185954532 + (score * 0.0759297726);
+
+        var loop;
+        
+        function calcRate(day, score, level) {
+            var r = (Math.pow(e, -(day / (score * (Math.pow(level, 2) * 10))))) * 100;
+            return r;
+        }
+
+        function startLoop() {
+            loop = setInterval(calculate, 10);
+        }
 
         function calculate() {
-            var e = 2.71828182;
-
-            rate = (Math.pow(e, -(day / (score * (Math.pow(level, 2)))))) * 100;
+            rate = calcRate(day, score, level);
             document.getElementById("result").innerHTML = "Day " + Math.round(day + last_interval_date) + ", Rate " + rate.toFixed(5) + "%";
             drawCanvas();
+            console.log("Rate : " + rate);
 
             if (rate <= 90) {
-                sendEmail(level, (day + last_interval_date), age);
-                level++;
-                last_interval_date += day;
-                day = 0;
+                interval();
+                clearInterval(loop);
             }
             day += 1;
         }
 
-        function sendEmail(level, x, age) {
-            alert("Email sent : level " + level + ", day " + Math.round(x) + ", age " + age);
+        function interval() {
+            drawCanvasInterval();
+            sendEmail(level, (day + last_interval_date));
+            level++;
+            last_interval_date += day;
+            day = 0;
+            console.log("Rate <= 90");
+        }
+
+        function sendEmail(level, day) {
+            alert("Email sent : level " + level + ", day " + Math.round(day));
         }
 
         function drawCanvas() {
             var canvas = document.getElementById('canvas');
             var context = canvas.getContext('2d');
 
-            context.fillRect((day + last_interval_date) * 2, 100 - Math.round(rate), 2, 2);
+            for(var i = 0; i < 2; i++) {
+                //context.fillRect((day + last_interval_date) * 2, 100 - Math.round(rate), i + 1, i + 1);
+                context.beginPath();
+                context.moveTo((day + last_interval_date) * 2, (100 - Math.round(rate)) * 2);
+                context.lineTo(((day + last_interval_date) * 2) + 1, (100 - Math.round(calcRate(day + 1, score, level))) * 2);
+                context.stroke();
+            }
+        }
+        
+        function drawCanvasInterval() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            context.fillRect((day + last_interval_date) * 2, 0, 1, 21);
         }
     </script>
 </body>
