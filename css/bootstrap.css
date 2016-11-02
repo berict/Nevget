@@ -69,7 +69,7 @@ margin-bottom: 15%
 .login-card .carousel .slide{
     background: #c7ffb6
 }
-
+.textmid{position: absolute; left: 50%; transform: translateX(-50%);}
 #logo {
   width: 100%;
   height: 100%;
