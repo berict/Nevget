@@ -1,7 +1,7 @@
 # Nevget develop
 ### Current status on developing, only README file
 
-#### Team Nevget
+### Team Nevget
 
 __Sunrin Internet Highschool__
 
@@ -33,3 +33,6 @@ __Sunrin Internet Highschool__
 - 16/10/28 Service character design, front keyword input (reminder)
 - 16/10/29 Finalized character design, game proposal selected
 - 16/10/30 Initialized game proposal
+- 16/10/31 Front welcome page designed
+- 16/11/01 Favicon design, brain score form, e-mail server settings / sending success!
+- 16/11/01 Favicon design finalized, UI/UX changes (font design, form fill-out design), responsive design
