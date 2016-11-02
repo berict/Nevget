@@ -11,6 +11,7 @@ var store = sessionstore.createSessionStore();
 var mailer = require('express-mailer');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/nevget');
+mongoose.Promise = global.Promise;
 
 var UserSchema = new mongoose.Schema({
     email: {type: String, unique: true},

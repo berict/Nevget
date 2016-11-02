@@ -3,11 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  if(req.session.nick_name){
+    res.redirect('/after');
+  } else {
+    res.render('index');
+  }
+
 });
 
-router.get('/al', function(req, res){
-  res.render('algorithm');
-});
 
 module.exports = router;
