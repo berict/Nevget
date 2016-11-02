@@ -9,8 +9,8 @@
     <canvas id="canvas" width="1000" height="100" style="margin-top: 100px"></canvas>
 
     <script type="text/javascript">
-        var x = 0;
-        var y = 0;
+        var day = 0;
+        var rate = 0;
         var level = 1;
         var last_interval_date = 0;
         
@@ -18,20 +18,19 @@
         score = 1.423 + (score * 0.095);
 
         function calculate() {
-            var age = 20;
             var e = 2.71828182;
 
-            y = Math.pow(e, -(x / (score * (Math.pow(level, 2)))));
-            document.getElementById("result").innerHTML = "Day " + Math.round((x + last_interval_date) * 10) + ", Rate " + y.toFixed(5);
+            rate = (Math.pow(e, -(day / (score * (Math.pow(level, 2)))))) * 100;
+            document.getElementById("result").innerHTML = "Day " + Math.round(day + last_interval_date) + ", Rate " + rate.toFixed(5) + "%";
             drawCanvas();
 
-            if (y <= 0.9) {
-                sendEmail(level, (x + last_interval_date) * 10, age);
+            if (rate <= 90) {
+                sendEmail(level, (day + last_interval_date), age);
                 level++;
-                last_interval_date += x;
-                x = 0;
+                last_interval_date += day;
+                day = 0;
             }
-            x += 0.1;
+            day += 1;
         }
 
         function sendEmail(level, x, age) {
@@ -42,7 +41,7 @@
             var canvas = document.getElementById('canvas');
             var context = canvas.getContext('2d');
 
-            context.fillRect(((x + last_interval_date) * 10) * 2, 100 - Math.round(y * 100), 2, 2);
+            context.fillRect((day + last_interval_date) * 2, 100 - Math.round(rate), 2, 2);
         }
     </script>
 </body>
