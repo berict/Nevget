@@ -1,3 +1,20 @@
+    /*Regular Expression*/
+function validate() {
+var inputEmail = $("iemail");
+
+if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+$/,iemail, "이메일 형식에 어긋납니다."))return false;} //서버에서 2차 처리
+
+      function chk(re, e, msg) {
+               if (re.test(e.value)) {
+                       return true;
+               }
+               $("#iemail").before("<p style='color:red'>"+msg+"</p>");
+               e.value = "";
+               e.focus();
+               return false;
+        }
+
+
     function yes() {
         document.getElementById("yn").checked = true;
     }
