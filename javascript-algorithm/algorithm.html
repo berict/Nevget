@@ -42,18 +42,45 @@
             }
             day += 1;
         }
+        
+        function calcNextInterval() {
+            console.log("Next interval calculating started");
+            var dayCalc = 0;
+            var rateCalc = calcRate(dayCalc, score, level + 1);
+
+            while(rateCalc > 90) {
+                console.log("Next interval calculating, rate : " + rateCalc);
+                rateCalc = calcRate(dayCalc, score, level + 1);
+                ++dayCalc;
+            }
+
+            return dayCalc - 1;
+        }
 
         function interval() {
             drawCanvasInterval();
-            sendEmail(level, (day + last_interval_date));
+            sendEmail(level, (day + last_interval_date), calcNextInterval());
             level++;
             last_interval_date += day;
             day = 0;
             console.log("Rate <= 90");
         }
 
-        function sendEmail(level, day) {
-            alert("Email sent : level " + level + ", day " + Math.round(day));
+        function sendEmail(level, day, dayPassed) {
+            if(confirm("Email sent" +
+                            "\nLevel " + level +
+                            "\nDay " + Math.round(day) +
+                            "\nUntil next interval " + dayPassed + " days left" +
+                            "\nNext interval on Day " + (Math.round(day) + dayPassed) +
+                            "\nPress OK to continue, press CANCEL to pause."
+                    )) {
+                // ok, continue
+                startLoop();
+            } else {
+                // cancel, pause
+                console.log("Paused");
+                clearInterval(loop);
+            }
         }
 
         function drawCanvas() {
