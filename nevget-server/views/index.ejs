@@ -6,129 +6,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Main proto</title>
+    <title>Nevget</title>
 
 </head>
 
 <body id="gradient">
-    <div id="logo"><div>
+    <div id="logo">
+        <div>
 
-    <section class="login-card">
-    <br><img src="/image/nevget.png"  width="200" alt="nevget"><br>
+            <section class="login-card">
+                <br><img src="/image/nevget.png" width="200" alt="nevget">
+                <br>
 
 
-    <!--Log in-->
-    <div class="log">
-    <h1>Get your memories together.</h1><br>
+                <!--Log in-->
+                <div class="log">
+                    <h1>Get your memories together.</h1>
+                    <br>
 
-      <form method="post" action="/auth/login">
-      <div class="form-group">
-      <input class="login-field" placeholder="Your e-mail" required="required" autocomplete="off" name="email" type="text">
-      <input class="login-field" placeholder="Your password" required="required" autocomplete="off" name="pw" type="password">
-     </div>
-        <div class="fsize"><a  class="btn btn-link M">CANCEL</a>
-        <input  type="submit" name="login" class="btn btn-link" value="LOG IN">
-      </div>
-      </form>
+                    <form method="post" action="/auth/login">
+                        <div class="form-group">
+                            <input class="login-field" placeholder="Your e-mail" required="required" autocomplete="off" name="email" type="text">
+                            <input class="login-field" placeholder="Your password" required="required" autocomplete="off" name="pw" type="password">
+                        </div>
+                        <div class="fsize"><a class="btn btn-link M">CANCEL</a>
+                            <input type="submit" name="login" class="btn btn-link" value="LOG IN">
+                        </div>
+                    </form>
 
+                </div>
+
+                <!--Sign in-->
+                <div class="sign" ng-app="myApp" ng-controller="myCtrl">
+                    <h1>Get your memories together.</h1>
+                    <br>
+
+                    <form method="post" action="/auth/reg">
+                      <input type="text" name="name" placeholder="Name" required="required" autocomplete="off">
+                      <input type="text" name="email" placeholder="Your e-mail" required="required" autocomplete="off">
+                      <input type="password" ng-model="pw" name="pw" placeholder="Password" required="required" autocomplete="off">
+                      <input type="password" ng-model="pw_c" placeholder="Confirm your Password" required="required" autocomplete="off">
+                      <h1 id="err"></h1>
+                      <label>
+                          <input type="checkbox" onclick="check()" ng-model="agreed" id="yn" name="agreed" data-toggle="modal" data-target="#at" />&nbsp;&nbsp; I agree to the Terms of Service</label>
+                      <br>
+                      <div class="fsize"><a class="btn btn-link M">CANCEL</a>
+                          <input type="submit" name="sign" class="btn btn-link" value="SIGN IN" disabled>
+                      </div>
+                    </form>
+                </div>
+
+                <script type="text/javascript" src="js/check_pw.js"></script>
+
+
+                <!-- main -->
+                <div class="main">
+                    <h1>Never forget a thing, again.</h1>
+                    <br>
+
+                    <div class="login-help">
+                        <a href="#" class="S" style="margin-right:4%;margin-left:2%;color:#1e90ff">SIGN IN</a> <a href="#" class="L">LOG IN</a>
+
+
+                        <span class="down"><span class="glyphicon glyphicon-chevron-down"></span></span>
+                        <span class="up"><span class="glyphicon glyphicon-chevron-up"></span></span>
+
+                        <div class="textbox" style="display:none;font-size:13.5px;margin-top:5px;">
+                            <br>This is a long-term memory reminder. Do you
+                            <br>have something to remember forever?
+                            <br>You are in the right place.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 이용 약관 모달 -->
+            <div class="modal fade" id="at" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Privacy and Terms</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>By choosing “I agree” below you agree to Nevget’s Terms of Service.</p>
+
+                            You also agree to our Privacy Policy, which describes the personal information we collect, the purposes for which we collect it, and how it is stored, including these key points:
+
+                            <hr>
+
+                            <h4>Data we collect and use when you use Nevget</h4>
+                            <p style="margin-left:4%">- When you sign up for a Nevget account we’ll ask for personal information, like your name and email address, to store with your account.</p>
+                            <p style="margin-left:4%">- When you make or edit a reminder, for example, we may collect and use information about that activity – including information like the time you created the reminder, reminder’s title, and hints.</p>
+
+                            You can change and remove your personal information anytime on the Account Settings.
+
+                            <h4>Why we process it</h4>
+                            <p>We process this data for the purposes described in our policy, including to:</p>
+                            <p style="margin-left:4%">- Help our services deliver more useful, customized content such as more relevant delayed notifications;</p>
+                            <p style="margin-left:4%">- Improve the quality of our services and develop new ones;</p>
+                            <p style="margin-left:4%">- Conduct analytics and measurement to understand how our services are used.
+                            </p>
+
+                            <h4>Storage of data</h4>
+                            <p>Nevget makes reasonable efforts to provide users with ways to access their personal information and to delete such data upon request. After a user requests that information be deleted, copies of the data will expire and be
+                                subsequently overwritten, unless a copy must be retained for legitimate business purposes or to comply with the law.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" style="color:#999" onclick="no()" class="btn btn-link" data-dismiss="modal">DISAGREE</button>
+                            <button type="button" onclick="yes()" class="btn btn-link" data-dismiss="modal">I AGREE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!--Sign in-->
-    <div class="sign">
-    <h1>Get your memories together.</h1><br>
-      <form method="post" action="/auth/reg">
-        <input type="text" name="name" placeholder="Name" required="required" autocomplete="off">
-        <input type="text" name="email" placeholder="Your e-mail" required="required" autocomplete="off">
-        <input type="password" name="pw" placeholder="Password" required="required" autocomplete="off">
-        <input type="password" name="pw_c" placeholder="Confirm your Password" required="required" autocomplete="off">
-
-        <label><input type="checkbox" id="yn" name="agreed" data-toggle="modal" data-target="#at"/>&nbsp;&nbsp; I agree to the Terms of Service</label><br>
-        <div class="fsize"><a class="btn btn-link M">CANCEL</a>
-        <input type="submit" name="sign" class="btn btn-link" value="SIGN IN">
-      </div>
-      </form>
-    </div>
-
-
-    <!-- main -->
-    <div class="main">
-    <h1>Never forget a thing, again.</h1><br>
-
-
-  <div class="login-help">
-    <a href="#" class="S" style="margin-right:4%;margin-left:2%;color:#1e90ff">SIGN IN</a>    <a href="#" class="L">LOG IN</a>
-
-
-     <span class="down"><span class="glyphicon glyphicon-chevron-down"></span></span>
-    <span class="up"><span class="glyphicon glyphicon-chevron-up"></span></span>
-
-    <div class="textbox" style="display:none;font-size:13.5px;margin-top:5px;"><br>This is a long-term memory reminder. Do you
-      <br>have something to remember forever?
-      <br>You are in the right place.
-    </div>
-  </div>
-
-
-
-</div>
-</section>
-
-<!-- 이용 약관 모달 -->
-<div class="modal fade" id="at" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Privacy and Terms</h4>
-      </div>
-      <div class="modal-body">
-     <p>By choosing “I agree” below you agree to Nevget’s Terms of Service.</p>
-
-You also agree to our Privacy Policy, which describes the personal
-information we collect, the purposes for which we collect it,
-and how it is stored, including these key points:
-
-<hr>
-
-          <h4>Data we collect and use when you use Nevget</h4>
-	<p style="margin-left:4%">- When you sign up for a Nevget account we’ll ask for personal information,
-          like your name and email address, to store with your account.</p>
-	<p style="margin-left:4%">- When you make or edit a reminder, for example, we may collect and use
-	  information about that activity – including information like the time you
-	  created the reminder, reminder’s title, and hints.</p>
-
-You can change and remove your personal information anytime on the Account
-Settings.
-
-          <h4>Why we process it</h4>
-          <p>We process this data for the purposes described in our policy, including to:</p>
-	<p style="margin-left:4%">- Help our services deliver more useful, customized content such as more
-        relevant delayed notifications;</p>
-          <p style="margin-left:4%">- Improve the quality of our services and develop new ones;</p>
-	<p style="margin-left:4%">- Conduct analytics and measurement to understand how our services are
-        used.</p>
-
-          <h4>Storage of data</h4>
-<p>Nevget makes reasonable efforts to provide users with ways to access their
-personal information and to delete such data upon request. After a user requests
-that information be deleted, copies of the data will expire and be subsequently
-overwritten, unless a copy must be retained for legitimate business purposes or
-          to comply with the law.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" style="color:#999" onclick="no()" class="btn btn-link" data-dismiss="modal">CANCLE</button>
-        <button type="button" onclick="yes()" class="btn btn-link" data-dismiss="modal">I AGREE</button>
-      </div>
-    </div>
-  </div>
-</div>
- </div>
-</div>
-        <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
 </body>
+
 </html>

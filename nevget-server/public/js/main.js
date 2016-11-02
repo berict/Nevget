@@ -6,6 +6,10 @@
         document.getElementById("yn").checked = false;
     }
 
+    function check(){
+       document.getElementById("yn").checked = false;
+    }
+
     /*Log in & Sign in - To be able to move*/
     $(function () {
         var log = $('.L');
@@ -16,12 +20,12 @@
             $('.log').fadeIn();
         });
         sign.click(function () {
-            $('.main').css("display", "none")
+            $('.main').css("display", "none");
             $('.sign').fadeIn();
         });
         main.click(function () {
-            $('.log').css("display", "none")
-            $('.sign').css("display", "none")
+            $('.log').css("display", "none");
+            $('.sign').css("display", "none");
             $('.main').fadeIn();
         });
     });
@@ -35,12 +39,12 @@
         var textbox = $('.textbox');
         down.click(function () {
             textbox.slideDown();
-            $('.down').css("display", "none")
+            $('.down').css("display", "none");
             $('.up').show();
         });
         up.click(function () {
             textbox.slideUp();
-            $('.up').css("display", "none")
+            $('.up').css("display", "none");
             $('.down').show();
         });
     });
@@ -86,24 +90,24 @@
             $('.setting').fadeIn();
         });
         $('.Lis').click(function () {
-            $('.main').css("display", "none")
-            $('.add').css("display", "none")
-            $('.edit').css("display", "none")
+            $('.main').css("display", "none");
+            $('.add').css("display", "none");
+            $('.edit').css("display", "none");
             $('.list').fadeIn();
         });
         $('.Add').click(function () {
-            $('.list').css("display", "none")
+            $('.list').css("display", "none");
             $('.add').fadeIn();
         });
         $('.Edi').click(function () {
-            $('.list').css("display", "none")
+            $('.list').css("display", "none");
             $('.edit').fadeIn();
         });
         $('.Ma').click(function () {
-            $('.setting').css("display", "none")
-            $('.list').css("display", "none")
-            $('.add').css("display", "none")
-            $('.edit').css("display", "none")
+            $('.setting').css("display", "none");
+            $('.list').css("display", "none");
+            $('.add').css("display", "none");
+            $('.edit').css("display", "none");
             $('.main').fadeIn();
         });
 
@@ -116,7 +120,7 @@
         var b = $(a).hasClass('open');
         var c = $(a).closest('.accordion').find('.open');
 
-        if (b != true) {
+        if (b !== true) {
             $(c).find('.content').slideUp(200);
             $(c).removeClass('open');
         }

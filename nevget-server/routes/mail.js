@@ -1,4 +1,3 @@
-
 function mail(app, mailer) {
     mailer.extend(app, {
         from: 'admin@nevget.xyz',
@@ -26,11 +25,11 @@ function mail(app, mailer) {
 
 }
 
-function mail_schedule(user, title){
+function mail_schedule(user, title, name){
   app.mailer.send('email', {
       to: user,
-      subject: 'you must remind' + title,
-      otherProperty: 'Other Property' 
+      subject: name + 'you must remind this ' + title,
+      otherProperty: 'Other Property'
   }, function(err) {
       if (err) {
           console.log(err);
@@ -38,7 +37,6 @@ function mail_schedule(user, title){
       }
       console.log('Email Sent');
   });
-  res.send('Email Sent');
 }
 
 module.exports = mail;

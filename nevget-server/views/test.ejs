@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<p>Input something in the input box:</p>
+		<p>Name :
+			<input type="text" ng-model="name" placeholder="Enter name here">
+		</p>
+
+		<h1>Hello {{name}}</h1>
+
+	</div>
+	<script>
+		var i = 0;
+		var app = angular.module('myApp', []);
+
+		app.controller('myCtrl', function($scope, $http) {
+			$scope.$watch('name', function(newValue, oldValue) {
+				if($scope['name'] != "asdf") alert("asdf");
+			}, true);
+		});
+
+	</script>
+</body>
+
+</html>

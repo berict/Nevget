@@ -20,10 +20,10 @@ router.post('/reg', function(req, res) {
           else{
 
             req.session.regenerate(function() {
-                req.session.nick_name = user.name;
-                res.redirect('/after');
+                req.session.logined = user.name;
             });
 
+            res.redirect('/after');
           }
       });
 
@@ -43,10 +43,9 @@ router.post('/login', function(req, res) {
 
         if(user){
           req.session.regenerate(function() {
-              req.session.nick_name = user.name;
-              res.redirect('/after');
+              req.session.logined = user.name;
           });
-      
+          res.redirect('/after');
         }
         else res.redirect('/');
     });
