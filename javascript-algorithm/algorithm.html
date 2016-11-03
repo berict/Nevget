@@ -16,8 +16,8 @@
         var last_interval_date = 0;
         
         //var score = prompt("Enter game score 1 <= x <= 10");
-        var score = 4;
-        score = 1.5185954532 + (score * 0.0759297726);
+        var score = 45; //mode is 45
+        score = 1.5185954532 + ((((score - 15) / 6) - 1) * 0.0759297726);
 
         var loop;
         
@@ -27,7 +27,7 @@
         }
 
         function startLoop() {
-            loop = setInterval(calculate, 10);
+            loop = setInterval(calculate, 50);
         }
 
         function calculate() {
