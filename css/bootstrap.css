@@ -77,7 +77,11 @@ margin-bottom: 15%
 }
 
 .login-card {
-  position: absolute; left: 50%; top:50%;  transform:translate(-50%, -50%);
+  position: absolute; 
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  -ms- transform: translate(-50%, -50%);
   padding: 50px 40px 20px 40px;
   background-color : rgba(247, 247, 247, 0.7);
   border-radius: 8px;
@@ -225,7 +229,7 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
-.content canvas,.edit canvas{
+.content canvas,.edit canvas,#mail canvas{
 background: url('../image/main.png');
   display: block;
   vertical-align: baseline;

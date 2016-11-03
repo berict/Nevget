@@ -170,7 +170,7 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
 
 
         $('#gradient').css({
-            background: "-webkit-radial-gradient(circle," + color1 + ",white)"
+            background: "radial-gradient(circle," + color1 + ",white)"
         }, 2000);
         step += gradientSpeed;
         if (step >= 1) {
