@@ -21,6 +21,7 @@
 
 "Nevget은 여러분들의 기억을 도와드립니다!“
 
+
 “저, Nev짱은 당신의 기억에 도움이 되고 싶어요!” 
 
 “저는 기억해내는 걸 좋아한답니다 ><”
@@ -71,3 +72,45 @@
 그리고 아쉽게도 우리는 대부분의 꿈을 기억해 내지 못한다고 하네요 ㅠㅠ“
 
 ~~“Nevget 은 여러분이 원할 때, 언제 어디서든 사용 할 수 있는 서비스입니다.”~~
+
+The planners of the Nevget Services were inspired by the math textbook.dont you think its already forgotten?
+
+do you know forgetting curve It shows the extent of losing memory according to the passage of time
+
+Nevget is reminding alarm service
+
+Taking a break sometimes helps your memory.
+
+It must be really hard to remember so many things.
+
+I help you with your memories.
+
+I want to help your memory
+
+i am enjoying remember something///
+
+Nevget service is can be used for studying
+
+You must remember the information of the precious people.
+
+I didnt remember it for you
+
+When you memorize something, it is helpful to memorize and memorize things already.
+Why don't we learn how to recognize a mnemonic system?
+
+The brain organizes the information that you learned while waking up. It is important to sleep well, right?
+
+Studying before bedtime is a good way to study.
+
+I remember it better if I make mistakes. For example, test questions are more problematic than other problems,
+so try not to panic and challenge them.
+
+hyperthymesia is a syndrome of every particular. Isn't that interesting?
+
+Nevget service is remember all of your precious stuff.
+
+Using a lot of your fingers helps you improve your memory. how about learn musical instruments?
+
+The planners of the Nevget Services were inspired by the math book.
+
+Dreams are reflected in your unconscious mind. And sadly we can not remember most of our dreams.
