@@ -1,26 +1,28 @@
-    /*Regular Expression*/
-function validate() {
-var inputEmail = $("iemail");
-
-if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+$/,iemail, "이메일 형식에 어긋납니다."))return false;} //서버에서 2차 처리
-
-      function chk(re, e, msg) {
-               if (re.test(e.value)) {
-                       return true;
-               }
-               $("#iemail").before("<p style='color:red'>"+msg+"</p>");
-               e.value = "";
-               e.focus();
-               return false;
-        }
-
+    var agree = false;
+    var pw_check = false;
 
     function yes() {
         document.getElementById("yn").checked = true;
+//        agree = true;
+//        if (!pw_check) {
+//            $('.fsize').before("<h1 style='color:red;font-size:16px;'>비밀번호를 입력해주세요</h1>");
+//        }
+//        if (agree && pw_check) {
+//            $('#err').html("");
+//            $("input[name=sign]").attr("disabled", false);
+//        }
     }
 
     function no() {
         document.getElementById("yn").checked = false;
+//        $("input[name=sign]").attr("disabled", true);
+//
+
+    }
+
+    function check() {
+        document.getElementById("yn").checked = false;
+        agree = false;
     }
 
     /*Log in & Sign in - To be able to move*/
@@ -33,12 +35,12 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
             $('.log').fadeIn();
         });
         sign.click(function () {
-            $('.main').css("display", "none")
+            $('.main').css("display", "none");
             $('.sign').fadeIn();
         });
         main.click(function () {
-            $('.log').css("display", "none")
-            $('.sign').css("display", "none")
+            $('.log').css("display", "none");
+            $('.sign').css("display", "none");
             $('.main').fadeIn();
         });
     });
@@ -52,48 +54,110 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
         var textbox = $('.textbox');
         down.click(function () {
             textbox.slideDown();
-            $('.down').css("display", "none")
+            $('.down').css("display", "none");
             $('.up').show();
         });
         up.click(function () {
             textbox.slideUp();
-            $('.up').css("display", "none")
+            $('.up').css("display", "none");
             $('.down').show();
         });
     });
 
     /*graph*/
-    var x = 0;
-    var y = 0;
-    var level = 1;
-    var last_interval_date = 0;
+     var e = 2.71828182;
+        var day = 0;
+        var rate = 0;
+        var level = 1;
+        var last_interval_date = 0;
+        
+        //var score = prompt("Enter game score 1 <= x <= 10");
+        var score = 4;
+        score = 1.5185954532 + (score * 0.0759297726);
 
-    function calculate() {
-        var e = 2.71828182;
-
-        y = Math.pow(e, -(x / (1.898 * (Math.pow(level, 2)))));
-        document.getElementById("result").innerHTML = "Day " + Math.round((x + last_interval_date) * 10) + ", Rate " + y.toFixed(5);
-        drawCanvas();
-
-        if (y <= 0.9) {
-            sendEmail(level, (x + last_interval_date) * 10);
-            level++;
-            last_interval_date += x;
-            x = 0;
+        var loop;
+        
+        function calcRate(day, score, level) {
+            var r = (Math.pow(e, -(day / (score * (Math.pow(level, 2) * 10))))) * 100;
+            return r;
         }
-        x += 0.1;
-    }
 
-    function sendEmail(level, x) {
-        alert("Email sent : level " + level + ", day " + Math.round(x));
-    }
+        function startLoop() {
+            loop = setInterval(calculate, 10);
+        }
 
-    function drawCanvas() {
-        var canvas = document.getElementById('canvas');
-        var context = canvas.getContext('2d');
+        function calculate() {
+            rate = calcRate(day, score, level);
+            document.getElementById("result").innerHTML = "Day " + Math.round(day + last_interval_date) + ", Rate " + rate.toFixed(5) + "%";
+            drawCanvas();
+            console.log("Rate : " + rate);
 
-        context.fillRect(((x + last_interval_date) * 10) * 2, 100 - Math.round(y * 100), 2, 2);
-    }
+            if (rate <= 90) {
+                interval();
+                clearInterval(loop);
+            }
+            day += 1;
+        }
+        
+        function calcNextInterval() {
+            console.log("Next interval calculating started");
+            var dayCalc = 0;
+            var rateCalc = calcRate(dayCalc, score, level + 1);
+
+            while(rateCalc > 90) {
+                console.log("Next interval calculating, rate : " + rateCalc);
+                rateCalc = calcRate(dayCalc, score, level + 1);
+                ++dayCalc;
+            }
+
+            return dayCalc - 1;
+        }
+
+        function interval() {
+            drawCanvasInterval();
+            sendEmail(level, (day + last_interval_date), calcNextInterval());
+            level++;
+            last_interval_date += day;
+            day = 0;
+            console.log("Rate <= 90");
+        }
+
+        function sendEmail(level, day, dayPassed) {
+            if(confirm("Email sent" +
+                            "\nLevel " + level +
+                            "\nDay " + Math.round(day) +
+                            "\nUntil next interval " + dayPassed + " days left" +
+                            "\nNext interval on Day " + (Math.round(day) + dayPassed) +
+                            "\nPress OK to continue, press CANCEL to pause."
+                    )) {
+                // ok, continue
+                startLoop();
+            } else {
+                // cancel, pause
+                console.log("Paused");
+                clearInterval(loop);
+            }
+        }
+
+        function drawCanvas() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            for(var i = 0; i < 2; i++) {
+                //context.fillRect((day + last_interval_date) * 2, 100 - Math.round(rate), i + 1, i + 1);
+                context.beginPath();
+                context.moveTo((day + last_interval_date) * 2, (100 - Math.round(rate)) * 2);
+                context.lineTo(((day + last_interval_date) * 2) + 1, (100 - Math.round(calcRate(day + 1, score, level))) * 2);
+                context.stroke();
+            }
+        }
+        
+        function drawCanvasInterval() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            context.fillRect((day + last_interval_date) * 2, 0, 1, 21);
+        }
 
 
     /*Reminders & settings - To be able to move*/
@@ -103,24 +167,24 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
             $('.setting').fadeIn();
         });
         $('.Lis').click(function () {
-            $('.main').css("display", "none")
-            $('.add').css("display", "none")
-            $('.edit').css("display", "none")
+            $('.main').css("display", "none");
+            $('.add').css("display", "none");
+            $('.edit').css("display", "none");
             $('.list').fadeIn();
         });
         $('.Add').click(function () {
-            $('.list').css("display", "none")
+            $('.list').css("display", "none");
             $('.add').fadeIn();
         });
         $('.Edi').click(function () {
-            $('.list').css("display", "none")
+            $('.list').css("display", "none");
             $('.edit').fadeIn();
         });
         $('.Ma').click(function () {
-            $('.setting').css("display", "none")
-            $('.list').css("display", "none")
-            $('.add').css("display", "none")
-            $('.edit').css("display", "none")
+            $('.setting').css("display", "none");
+            $('.list').css("display", "none");
+            $('.add').css("display", "none");
+            $('.edit').css("display", "none");
             $('.main').fadeIn();
         });
 
@@ -133,7 +197,7 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
         var b = $(a).hasClass('open');
         var c = $(a).closest('.accordion').find('.open');
 
-        if (b != true) {
+        if (b !== true) {
             $(c).find('.content').slideUp(200);
             $(c).removeClass('open');
         }
@@ -170,7 +234,7 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
 
 
         $('#gradient').css({
-            background: "radial-gradient(circle," + color1 + ",white)"
+            background: "-webkit-radial-gradient(circle," + color1 + ",white)"
         }, 2000);
         step += gradientSpeed;
         if (step >= 1) {
@@ -183,26 +247,20 @@ if(!chk(/^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-
         }
     }
     setInterval(updateGradient, 10);
- 
-/*Carousel*/
-$('.carousel').carousel({
-pause: true,
-interval: false
-});
 
-$(function () {
-var CB = new Array("#f8da76","#c7ffb6","#eda5f7");
-var a= 0;
-var currentIndex = $('div.active').index();
-
-$('.carousel').on('slid.bs.carousel', function () {
-  currentIndex = $('div.active').index();
-  if(currentIndex==0)
-      $(".login-card.carousel.slide").animate({backgroundColor: CB[0]}, 300); 
-  else if(currentIndex==1)
-      $(".login-card.carousel.slide").animate({backgroundColor: CB[1]}, 300); 
-  else if(currentIndex==2)
-      $(".login-card.carousel.slide").animate({backgroundColor: CB[2]}, 300); 
-});
-    
-});
+//    var app = angular.module('myApp', []);
+//
+//    app.controller('myCtrl', function ($scope, $http) {
+//
+//        $scope.$watch('email', function (value) {
+//            var re = /^[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+@[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+.[-!#$%& amp;'*+./0-9=?A-Z^_a-z{|}~]+$/
+//            console.log("?ASD");
+//            if (!re.test($scope.email)) {
+//                $("#iemail").before("<p style='color:red'> 이메일 형식에 맞지않습니다. </p>");
+//                $("#iemail").focus();
+//            }
+//
+//
+//        }, true);
+//
+//    });
