@@ -24,14 +24,14 @@
 
     <!--Log in-->
     <div class="log">
-    <h1>Get your memories together.</h1><br>
+    <h1>기억을 다시 되돌려 보세요.</h1><br>
 
       <form method="post">
       <div class="form-group">
       <input class="login-field" placeholder="Your e-mail" required="required" autocomplete="off" name="email" type="text">
       <input class="login-field" placeholder="Your password" required="required" autocomplete="off" name="pw" type="password">
      </div>
-        <div class="fsize"><a  class="btn btn-link M">CANCEL</a>
+        <div class="fsize"><a  class="btn btn-link M">취소</a>
         <input  type="submit" name="login" class="btn btn-link" value="LOG IN">
       </div>
       </form>
@@ -40,15 +40,15 @@
 
     <!--Sign in-->
     <div class="sign"  ng-app="myApp" ng-controller="myCtrl" >
-    <h1>Get your memories together.</h1><br>
+    <h1>기억을 다시 되돌려 보세요</h1><br>
       <form method="post" onsubmit="return validate();">
         <input type="text" id="Name" name="name" placeholder="Name" required="required" autocomplete="off">
         <input type="text"  ng-model="email" id="iemail" name="email" placeholder="Your e-mail" required="required" autocomplete="off">
         <input type="password" id="pw" name="pw" placeholder="Password" required="required" autocomplete="off">
         <input type="password" id="pw_c" name="pw" placeholder="Confirm your Password" required="required" autocomplete="off">
 
-        <label><input type="checkbox" id="yn" name="agreed" data-toggle="modal" data-target="#at"/>&nbsp;&nbsp; I agree to the Terms of Service</label><br>
-        <div class="fsize"><a class="btn btn-link M">CANCEL</a>
+        <label><input type="checkbox" id="yn" name="agreed" data-toggle="modal" data-target="#at"/>&nbsp;&nbsp; 서비스 약관에 동의합니다.</label><br>
+        <div class="fsize"><a class="btn btn-link M">취소</a>
         <input type="submit" name="sign" class="btn btn-link" value="SIGN IN">
       </div>
       </form>
@@ -57,19 +57,19 @@
 
     <!-- main -->
     <div class="main">
-    <h1>Never forget a thing, again.</h1><br>
+    <h1>사소한 것까지 기억합니다</h1><br>
 
 
   <div class="login-help">
-    <a href="#" class="S" style="margin-right:4%;margin-left:2%;color:#1e90ff">SIGN IN</a>    <a href="#" class="L">LOG IN</a>
+    <a href="#" class="S" style="margin-right:4%;margin-left:2%;color:#1e90ff">회원가입</a>    <a href="#" class="L">로그인</a>
 
 
      <span class="down"><span class="glyphicon glyphicon-chevron-down"></span></span>
     <span class="up"><span class="glyphicon glyphicon-chevron-up"></span></span>
 
-    <div class="textbox" style="display:none;font-size:13.5px;margin-top:5px;"><br>This is a long-term memory reminder. Do you
-      <br>have something to remember forever?
-      <br>You are in the right place.
+    <div class="textbox" style="display:none;font-size:13.5px;margin-top:5px;"><br>이것은 장기기억을 상기시켜 줍니다. 영원히
+      <br>기억해야할 무언가가 있나요?
+      <br>제대로 찾아왔군요!.
     </div>
   </div>
 
@@ -84,45 +84,31 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Privacy and Terms</h4>
+        <h4 class="modal-title" id="myModalLabel">개인정보 보호 및 약관</h4>
       </div>
       <div class="modal-body">
-     <p>By choosing “I agree” below you agree to Nevget’s Terms of Service.</p>
+     <p>아래에서 '동의'를 선택하면 Nevget 서비스 약관에 동의하게 됩니다.</p>
 
-You also agree to our Privacy Policy, which describes the personal 
-information we collect, the purposes for which we collect it, 
-and how it is stored, including these key points:
+또한 다음 주요 사항을 포함해 개인정보수집항목∙이용목적∙보유기간을 설명한 Google 개인정보취급방침에도 동의하게 됩니다.
           
 <hr>
 
-          <h4>Data we collect and use when you use Nevget</h4>
-	<p style="margin-left:4%">- When you sign up for a Nevget account we’ll ask for personal information, 
-          like your name and email address, to store with your account.</p>
-	<p style="margin-left:4%">- When you make or edit a reminder, for example, we may collect and use 
-	  information about that activity – including information like the time you
-	  created the reminder, reminder’s title, and hints.</p>
+          <h4>사용자가 Nevget을 사용할 때 Nevget에서 수집 및 이용하는 데이터</h4>
+	<p style="margin-left:4%">- Nevget 계정에 가입할 때 사용자의 계정과 함께 보관하기 위하여 이름과 이메일 주소와 같은 개인정보를 요청합니다.</p>
+	<p style="margin-left:4%">사용자의 계정 설정에 따라 이 데이터 중 일부는 Nevget 계정과 연결될 수 있으며 Nevget은 이 데이터를 개인정보로 취급합니다.
+          <h4>Nevget이 정보를 처리하는 이유
+</h4>
+          <p>Nevget은 Nevget 개인정보취급방침에 명시된 다음과 같은 목적으로 이 데이터를 처리합니다</p>
+	<p style="margin-left:4%">- 서비스의 유용성 향상 및 사용자의 관심분야를 반영한 검색결과 등 사용자에게 개인 최적화 설정된 콘텐츠 제공</p>
+          <p style="margin-left:4%">Nevget 서비스 품질 개선 및 새로운 서비스 개발</p>
+	<p style="margin-left:4%">Nevget 서비스가 사용되는 방식을 이해하기 위한 분석 및 측정 수행</p>
 
-You can change and remove your personal information anytime on the Account 
-Settings.
-
-          <h4>Why we process it</h4>
-          <p>We process this data for the purposes described in our policy, including to:</p>
-	<p style="margin-left:4%">- Help our services deliver more useful, customized content such as more 
-        relevant delayed notifications;</p>
-          <p style="margin-left:4%">- Improve the quality of our services and develop new ones;</p>
-	<p style="margin-left:4%">- Conduct analytics and measurement to understand how our services are 
-        used.</p>
-
-          <h4>Storage of data</h4>
-<p>Nevget makes reasonable efforts to provide users with ways to access their 
-personal information and to delete such data upon request. After a user requests 
-that information be deleted, copies of the data will expire and be subsequently 
-overwritten, unless a copy must be retained for legitimate business purposes or 
-          to comply with the law.</p>
+          <h4>데이터 보유</h4>
+<p>Nevget은 이용자에게 자신의 개인정보를 열람하고, 이용자의 삭제 요청에 따라 해당 개인정보를 삭제하기 위하여 성실하게 노력합니다. 이용자로부터 개인정보 삭제 요청을 받는 경우, 아카이브 사본의 보존기간이 만료하며, 법률상 의무 준수 또는 합법적인 사업상 목적을 위하여 일부 데이터를 보관하여야 하는 경우가 아닌 한 아카이브 사본은 그 이후에 덮어 씌워집니다.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" style="color:#999" onclick="no()" class="btn btn-link" data-dismiss="modal">CANCLE</button>
-        <button type="button" onclick="yes()" class="btn btn-link" data-dismiss="modal">I AGREE</button>
+        <button type="button" style="color:#999" onclick="no()" class="btn btn-link" data-dismiss="modal">취소</button>
+        <button type="button" onclick="yes()" class="btn btn-link" data-dismiss="modal">동의합니다</button>
       </div>
     </div>
   </div>
