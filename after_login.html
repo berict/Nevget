@@ -23,31 +23,31 @@
 
                 <!--Reminders_list-->
                 <div class="list">
-                    <h1 style="margin:0 5% 0 5%">활성화된 알림</h1>
+                    <h1 style="margin:0 5% 0 5%">Your active reminders</h1>
                     <br>
 
                     <div class="accordion">
                         
                         <div class="item">
-                            <div class="heading">키워드 1</div>
-                            <div class="content"><b style="font-size:16px">제목 1</b><span style="float:right;font-size:12px">[created_date]에 생성됨</span><br>
+                            <div class="heading">Keyword 1</div>
+                            <div class="content"><b style="font-size:16px">Title 1</b><span style="float:right;font-size:12px">Created at [created_date]</span><br>
                             <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
-                                <b class="textmid">레벨 n</b>
+                                <b class="textmid">level n</b>
                                 <div class="fsize">
-                        <a class="btn btn-link del" style="color:#f43737;">삭제</a>
-                        <a class="btn btn-link Edi">편집</a></div>
+                        <a class="btn btn-link del" style="color:#f43737;">DELETE</a>
+                        <a class="btn btn-link Edi">EDIT</a></div>
                 <br><br>
                             </div>
                    
                         </div>
                         
                         <div class="item">
-                            <div class="heading">키워드 2</div>
-                            <div class="content"><b style="font-size:16px">제목 2</b><span style="float:right;font-size:12px"> [created_date]에 생성됨</span><br>
-                            <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas><b class="textmid">레벨 n</b>
+                            <div class="heading">Keyword 2</div>
+                            <div class="content"><b style="font-size:16px">Title 2</b><span style="float:right;font-size:12px">Created at [created_date]</span><br>
+                            <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas><b class="textmid">level n</b>
                                 <div class="fsize">
-                        <a class="btn btn-link del" style="color:#f43737;">삭제</a>
-                        <a class="btn btn-link Edi">편집</a></div>
+                        <a class="btn btn-link del" style="color:#f43737;">DELETE</a>
+                        <a class="btn btn-link Edi">EDIT</a></div>
                 <br><br>
                             </div>
                         </div>
@@ -55,20 +55,20 @@
                     </div>
 
                     <div class="fsize">
-                        <a class="btn btn-link Add" style="color:#1e90ff;">추가</a>
-                        <a class="btn btn-link Ma">완료</a>
+                        <a class="btn btn-link Add" style="color:#1e90ff;">ADD</a>
+                        <a class="btn btn-link Ma">DONE</a>
                     </div>
 
                 </div>
 
                 <!--Reminders_add-->
                 <div class="add">
-                    <h1>당신의 기억을 함께 정리해 보세요.</h1>
+                    <h1>Get your memories together.</h1>
                     <br>
                     <form method="post">
                         <input class="login-field" placeholder="Thing to remember" required="required" autocomplete="off" name="thing" type="text">
                         <input class="login-field" placeholder="Keywords to your reminder" required="required" autocomplete="off" name="keyword" type="password">
-                        <div class="fsize"><a class="btn btn-link Lis">취소</a>
+                        <div class="fsize"><a class="btn btn-link Lis">CANCEL</a>
                             <input type="submit" name="reminder" class="btn btn-link" value="CREATE">
                         </div>
                     </form>
@@ -78,16 +78,16 @@
 
                 <!--Reminders_edit-->
                 <div class="edit">
-                    <h1>당신의 기억은 영원히 기억됩니다.</h1>
+                    <h1>Your memory, forever.</h1>
                     <br>
 
                    <form method="post">
                         <input type="text" name="title" placeholder="Title" required="required" autocomplete="off">
                         <input type="text" name="keyword" placeholder="Hints" required="required" autocomplete="off">
                           <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
-                       <a class="btn btn-link Reset" style="color:#f43737;margin-left:-5%;font-size:13px;">레벨 초기화</a><br><br>
+                       <a class="btn btn-link Reset" style="color:#f43737;margin-left:-5%;font-size:13px;">RESET LEVEL</a><br><br>
                         <div class="fsize">
-                            <a class="btn btn-link Lis">취소</a>
+                            <a class="btn btn-link Lis">CANCEL</a>
                             <input type="submit" name="reminder_edit" class="btn btn-link" value="CREATE">
                         </div>
                     </form>
@@ -100,7 +100,7 @@
 
                 <!--Settings-->
                 <div class="setting">
-                    <h1>당신의 정보를 바꾸세요</h1>
+                    <h1>Change your informations</h1>
                     <br>
                     <form method="post">
                         <input type="text" name="name" placeholder="User_Name" required="required" autocomplete="off">
@@ -108,7 +108,7 @@
                         <input type="password" name="pw" placeholder="Enter previous password" required="required" autocomplete="off">
                         <input type="password" name="pw" placeholder="Create a new Password" required="required" autocomplete="off">
                         <input type="password" name="pw" placeholder="Confirm your new Password" required="required" autocomplete="off">
-                        <div class="fsize"><a class="btn btn-link Ma">취소</a>
+                        <div class="fsize"><a class="btn btn-link Ma">DISCARD</a>
                             <input type="submit" name="save" class="btn btn-link" value="SAVE">
                         </div>
                     </form>
@@ -116,13 +116,13 @@
 
                 <!-- main -->
                 <div class="main">
-                    <h1>다시는 절대 잊지 말아요</h1>
+                    <h1>Never forget a thing, again.</h1>
                     <br>
 
 
                     <div class="login-help">
-                        <a href="#" class="Lis" style="margin-bottom:4%;color:#1e90ff;">기억들</a>
-                        <br><a href="#" class="Set">설정</a>
+                        <a href="#" class="Lis" style="margin-bottom:4%;color:#1e90ff;">YOUR REDMINDERS</a>
+                        <br><a href="#" class="Set">SETTINGS</a>
                     </div>
 
 
