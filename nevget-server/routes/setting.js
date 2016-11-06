@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+
+router.get('/', function(req, res){
+  if(req.session.nick_name){
+    res.render('settings', {name: req.session.nick_name, email:req.session.email});
+  } else {
+    res.redirect('/');
+  }
+});
+
 router.post('/', function(req, res, next) {
   var email = req.body.email;
   var prePass = req.body.prePass;

@@ -20,14 +20,17 @@ var UserSchema = new mongoose.Schema({
     notify_time: {type: Date},
     pw:{type: String},
     token: {type: String},
-    Country: {type: String}
+    Country: {type: String},
+    reg_date: {type: Date},
+    level: {type: Number, default: 0}
 });
 
 var reminderSchema = new mongoose.Schema({
   title: {type: String},
   hints: {type: String},
   last_interval_date: {type: Date},
-  level: {type: Number, defualt: 0},
+  date: {type: Date},
+  level: {type: Number, default: 0},
   hash_key: {type: String},
   user_email: {type: String, require: true}
 });
@@ -41,6 +44,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
 var after = require('./routes/after');
+var email = require('./routes/email');
 var setting = require('./routes/setting');
 
 // view engine setup
@@ -62,6 +66,7 @@ app.use('/after', after);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/setting', setting);
+app.use('/email', email);
 require('./routes/mail')(app, mailer);
 
 // catch 404 and forward to error handler
