@@ -1,35 +1,10 @@
-    var agree = false;
-    var pw_check = false;
-
     function yes() {
         document.getElementById("yn").checked = true;
-        agree = true;
-        if(!pw_check){
-          $('#err').html("비밀번호를 입력해주세요");
-        }
-        if(agree && pw_check){
-          $('#err').html("");
-          $("input[name=sign]").attr("disabled",false);
-        }
     }
 
     function no() {
         document.getElementById("yn").checked = false;
-        $("input[name=sign]").attr("disabled", true);
-
-        if(!pw_check){
-          $('#err').html("비밀번호를 입력해주세요");
-        }else{
-          $('#err').html("약관에 동의해주세요");
-        }
-        agree = false;
     }
-
-    function check(){
-       document.getElementById("yn").checked = false;
-       agree = false;
-    }
-
     /*Log in & Sign in - To be able to move*/
     $(function () {
         var log = $('.L');
@@ -177,7 +152,7 @@
 
 
         $('#gradient').css({
-            background: "-webkit-radial-gradient(circle," + color1 + ",white)"
+            background: "radial-gradient(circle," + color1 + ",white)"
         }, 2000);
         step += gradientSpeed;
         if (step >= 1) {
@@ -191,33 +166,27 @@
     }
     setInterval(updateGradient, 10);
 
-    var app = angular.module('myApp', []);
 
-    app.controller('myCtrl', function($scope, $http) {
+/*앵글러*/
+(function(angular) {
+  'use strict';
+var app = angular.module('myApp', []);
 
-        $scope.$watch('pw + pw_c', function(value) {
-            if ($scope['pw'] === "" && $scope['pw_c'] === "" || $scope['pw'] === undefined && $scope['pw_c'] === undefined) {
-                $('#err').html("비밀번호를 입력해주세요");
-            } else if ($scope['pw'] == $scope['pw_c']) {
-                pw_check = true;
-                if (agree) {
-                    $('#err').html("");
-                    $("input[name=sign]").attr("disabled",false);
-                } else {
-                    $('#err').html("약관에 동의해주세요");
-                }
-            } else {
-                pw_check = false;
-                $('#err').html("비밀번호가 일치하지않습니다");
-                $("input[name=sign]").attr("disabled", true);
-            }
-        }, true);
+app.directive('email', function() {
+  var EMAIL_REGEXP = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-        if ($scope['pw'] == $scope['pw_c']) {
-            if (pw_check) {
-                $('#err').html("");
-            } else {
-                $('#err').html("약관에 동의해주세요");
-            }
-        }
-    });
+  return {
+    require: '?ngModel',
+    link: function(scope, elm, attrs, ctrl) {
+      // only apply the validator if ngModel is present and Angular has added the email validator
+      if (ctrl && ctrl.$validators.email) {
+
+        // this will overwrite the default Angular email validator
+        ctrl.$validators.email = function(modelValue) {
+          return ctrl.$isEmpty(modelValue) || EMAIL_REGEXP.test(modelValue);
+        };
+      }
+    }
+  };
+});
+})(window.angular);

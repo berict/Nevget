@@ -12,4 +12,12 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/home', function(req, res, next) {
+  if(req.session.nick_name){
+    res.render('after_login');
+  } else {
+    res.redirect('/');
+  }
+});
+
 module.exports = router;
