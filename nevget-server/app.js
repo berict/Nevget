@@ -22,7 +22,8 @@ var UserSchema = new mongoose.Schema({
     token: {type: String},
     Country: {type: String},
     reg_date: {type: Date},
-    level: {type: Number, default: 0}
+    level: {type: Number, default: 0},
+    isTested:{type: Boolean, default: false}
 });
 
 var reminderSchema = new mongoose.Schema({
@@ -46,6 +47,7 @@ var auth = require('./routes/auth');
 var after = require('./routes/after');
 var email = require('./routes/email');
 var setting = require('./routes/setting');
+var test = require('./routes/test');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -67,6 +69,7 @@ app.use('/users', users);
 app.use('/auth', auth);
 app.use('/setting', setting);
 app.use('/email', email);
+app.use('/test', test);
 require('./routes/mail')(app, mailer);
 
 // catch 404 and forward to error handler

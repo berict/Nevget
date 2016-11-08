@@ -240,7 +240,7 @@
 
   $('input[name=sign]').click(function() {
       if ($("input:checkbox[id='yn']").is(":checked")) {
-          $.post("http://nevget.xyz/email", {
+          $.post("/email", {
               email: $('#iemail').val()
           }, (data, status) => {
             if (data) {
