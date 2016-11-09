@@ -10,23 +10,34 @@ var store = sessionstore.createSessionStore();
 
 var mailer = require('express-mailer');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/nevget');
+mongoose.connect('mongodb://localhost:27017/testnevget');
+mongoose.Promise = global.Promise;
 
 var UserSchema = new mongoose.Schema({
     email: {type: String, unique: true},
     name: {type: String},
     score: {type: Number, min:0, max:10, defualt: 5},
     notify_time: {type: Date},
-    pw:{type: String}
+    pw:{type: String},
+    token: {type: String},
+    Country: {type: String},
+    reg_date: {type: Date},
+    level: {type: Number, default: 0},
+    isTested:{type: Boolean, default: false}
 });
 
-var reminder = new mongoose.Schema({
-    id: {type: String},
-    rem_id: {type: String},
-    user_id: {type: String}
+var reminderSchema = new mongoose.Schema({
+  title: {type: String},
+  hints: {type: String},
+  last_interval_date: {type: Date},
+  date: {type: Date},
+  level: {type: Number, default: 0},
+  hash_key: {type: String},
+  user_email: {type: String, require: true}
 });
 
 Users = mongoose.model('users', UserSchema);
+Reminders = mongoose.model('reminders', reminderSchema);
 
 var app = express();
 
@@ -34,12 +45,14 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
 var after = require('./routes/after');
+var email = require('./routes/email');
+var setting = require('./routes/setting');
+var test = require('./routes/test');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-require('./routes/mail')(app, mailer);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -54,6 +67,10 @@ app.use('/', routes);
 app.use('/after', after);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/setting', setting);
+app.use('/email', email);
+app.use('/test', test);
+require('./routes/mail')(app, mailer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
