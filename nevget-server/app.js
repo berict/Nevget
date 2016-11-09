@@ -10,7 +10,7 @@ var store = sessionstore.createSessionStore();
 
 var mailer = require('express-mailer');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/nevget');
+mongoose.connect('mongodb://localhost:27017/testnevget');
 mongoose.Promise = global.Promise;
 
 var UserSchema = new mongoose.Schema({

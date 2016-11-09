@@ -31,7 +31,10 @@
 
                         <div class="item">
                             <div class="heading">Reg date</div>
-                            <div class="content"><b style="font-size:16px">register</b><span style="float:right;font-size:12px">Created at<%= reg_date%></span>
+                            <div class="content">
+                                <b style="font-size:16px">Reg date</b>
+                                <br>
+                                <span style="float:right;font-size:12px">Regist in <%= reg_date%></span>
                                 <br>
                                 <canvas id="canvas" width="261" height="92" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
                                 <b class="textmid">level <%= level%></b>
@@ -42,8 +45,31 @@
                                 <br>
                             </div>
 
+                            <%if(reminders != "null"){
+                              for(var i = 0; i<reminders.length; i++){
+                            %>
+                                <div class="item">
+                                    <div class="heading">
+                                        <%= reminders[i].title%>
+                                    </div>
+                                    <div class="content">
+                                        <b style="font-size:16px"><%= reminders[i].hints%></b>
+                                        <br>
+                                        <span style="float:right;font-size:12px">Create at <%= reminders[i].date%></span>
+                                        <br>
+                                        <canvas id="canvas" width="261" height="92" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+                                        <b class="textmid">level <%= reminders[i].level%></b>
+                                        <div class="fsize">
+                                            <a class="btn btn-link del" style="color:#f43737;">DELETE</a>
+                                            <a class="btn btn-link Edi">EDIT</a></div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                                <%}
+                            }
+                          %>
                         </div>
-
 
                     </div>
 
@@ -60,18 +86,20 @@
                     <br>
                     <form method="post">
                         <input class="login-field" placeholder="Thing to remember" required="required" autocomplete="off" name="thing" type="text">
-                        <input class="login-field" placeholder="Keywords to your reminder" required="required" autocomplete="off" name="keyword" type="password">
+                        <input class="login-field" placeholder="Keywords to your reminder" required="required" autocomplete="off" name="keyword" type="text">
                         <div class="fsize"><a class="btn btn-link Lis">CANCEL</a>
                             <input type="submit" name="reminder" class="btn btn-link" value="CREATE">
                         </div>
                     </form>
                 </div>
 
+
+
                 <!--Reminders_edit-->
                 <div class="edit">
                     <h1>Your memory, forever.</h1>
                     <br>
-                    <form method="post">
+                    <form method="post" action="/home">
                         <input type="text" name="title" placeholder="Title" required="required" autocomplete="off">
                         <input type="text" name="keyword" placeholder="Hints" required="required" autocomplete="off">
                         <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
@@ -90,7 +118,7 @@
                     <h1>Never forget a thing, again.</h1>
                     <br>
                     <div class="login-help">
-                        <a href="#" class="Lis" style="margin-bottom:4%;color:#1e90ff;">YOUR REMINDERS</a>
+                        <a href="#" class="Lis" style="margin-bottom:4%;color:#1e90ff;">YOUR REDMINDERS</a>
                         <br><a href="nevget.xyz/setting" class="Set">SETTINGS</a>
                     </div>
                 </div>

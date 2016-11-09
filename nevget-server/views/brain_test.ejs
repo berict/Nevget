@@ -31,27 +31,27 @@
                 var g = $('input:radio[name=question5]:checked').val();
                 var h = $('input:radio[name=question6]:checked').val();
                 var i = $('#question7').val();
-                var j = document.getElementById("question8").value;
-                var k = document.getElementById("question9").value;
-                var l = document.getElementById("question10").value;
-                var m = document.getElementById("question11").value;
-                var n = document.getElementById("question12").value;
-                var o = document.getElementById("question13").value;
-                var p = document.getElementById("question14").value;
-                var q = document.getElementById("question15").value;
+                var j = $('#question8').val();
+                var k = $('#question9').val();
+                var l = $('#question10').val();
+                var m = $('#question11').val();
+                var n = $('#question12').val();
+                var o = $('#question13').val();
+                var p = $('#question14').val();
+                var q = $('#question15').val();
 
                 score += Number(a) + Number(b) + Number(c) + Number(d) + Number(e) + Number(f) + Number(g) + Number(h) + Number(i) + Number(j) + Number(k) + Number(l) + Number(m) + Number(n) + Number(o) + Number(p) + Number(q);
                 var form = document.createElement("form");
-                var score_i = document.createElement("score");
+                var scoree = document.createElement("input");
 
-                  form.setAttribute("method", "post");
-                    form.setAttribute("action", "/auth/reg");
+                form.setAttribute("method", "post");
+                form.setAttribute("action", "/test");
 
-                      score_i.setAttribute("name", "score");
-                      score_i.setAttribute("value", score);
+                scoree.setAttribute("name", "score");
+                scoree.setAttribute("value", (((score - 15) / 6) - 1));
 
-                      form.appendChild(score_i);
-                      form.submit();
+                form.appendChild(scoree);
+                form.submit();
             } else {
                 alert("끝까지 체크해주세요!");
             }
@@ -108,8 +108,6 @@
                     <!-- Score 1 -->
                     <!-- Score 3 -->
                     <!-- Score 5 -->
-
-                    <form id="sub">
                         <div id="q1">
                             <label class="question left_question_first" for="question1">Education&nbsp;</label>
                             <select id="question1" name="question1" class="drop_down inline_answer" required>
@@ -388,8 +386,7 @@
                                 <!-- Score 1 -->
                             </select>
                         </div>
-                        <input type="submit" class="btn btn-primary" style="display: table; margin-left: auto; margin-right: auto; margin-top:25px" value="SUBMIT" onclick="calculate_s();">
-                    </form>
+         <input type="submit" class="btn btn-primary" style="display: table; margin-left: auto; margin-right: auto; margin-top:25px" value="SUBMIT" onclick="calculate_s();">
 
                 </div>
             </section>
