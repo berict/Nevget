@@ -36,7 +36,7 @@ router.post('/home', function(req, res){
    var reminder = new Reminders({
      user_email: req.session.email,
      title: title,
-     keyword: keyword,
+     hints: keyword,
      date: date
    });
 
