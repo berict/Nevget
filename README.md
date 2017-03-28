@@ -5,4 +5,4 @@ Backend server for Nevget
 fast and with no error pls
 
 ## Developer
-Sungjin Yoo (Jooho Lee)
+[Sungjin Yoo](https://github.com/panda147) ([Jooho Lee](https://github.com/joey914))
