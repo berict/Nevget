@@ -5,6 +5,3 @@ Icons, images, artworks, etc
 
 ## Theme
 Based on github artwork style
-
-## Artist
-Nathan Cho

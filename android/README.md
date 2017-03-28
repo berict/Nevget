@@ -5,6 +5,3 @@ Android app design assets
 UI based on Google Material Design Guideline
 
 Icon / images based on github artwork style
-
-## Artist
-Nathan Cho
