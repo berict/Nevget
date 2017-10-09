@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--I LOVE RUSSIA я люблю Россию -->
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Nevget</title>
+</head>
+
+<body id="gradient">
+    <div id="logo">
+        <div>
+
+            <section class="login-card">
+                <br><img src="/image/nevget.png" width="200" alt="nevget" oncontextmenu="return false">
+                <br>
+
+                <!--Reminders_list-->
+                <div class="list">
+                    <h1 style="margin:0 5% 0 5%">Your active reminders</h1>
+                    <br>
+
+                    <div class="accordion">
+
+                        <div class="item">
+                            <div class="heading">Reg date</div>
+                            <div class="content">
+                                <b style="font-size:16px">Reg date</b>
+                                <br>
+                                <span style="float:right;font-size:12px">Regist in <%= reg_date%></span>
+                                <br>
+                                <canvas id="canvas" width="261" height="92" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+                                <b class="textmid">level <%= level%></b>
+                                <div class="fsize">
+                                    <a class="btn btn-link del" style="color:#f43737;">DELETE</a>
+                                    <a class="btn btn-link Edi">EDIT</a></div>
+                                <br>
+                                <br>
+                            </div>
+
+                            <%if(reminders != "null"){
+                              for(var i = 0; i<reminders.length; i++){
+                            %>
+                                <div class="item">
+                                    <div class="heading">
+                                        <%= reminders[i].title%>
+                                    </div>
+                                    <div class="content">
+                                        <b style="font-size:16px"><%= reminders[i].hints%></b>
+                                        <br>
+                                        <span style="float:right;font-size:12px">Create at <%= reminders[i].date%></span>
+                                        <br>
+                                        <canvas id="canvas" width="261" height="92" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+                                        <b class="textmid">level <%= reminders[i].level%></b>
+                                        <div class="fsize">
+                                            <a class="btn btn-link del" style="color:#f43737;">DELETE</a>
+                                            <a class="btn btn-link Edi">EDIT</a></div>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                                <%}
+                            }
+                          %>
+                        </div>
+
+                    </div>
+
+                    <div class="fsize">
+                        <a class="btn btn-link Add" style="color:#1e90ff;">ADD</a>
+                        <a class="btn btn-link Ma">DONE</a>
+                    </div>
+
+                </div>
+
+                <!--Reminders_add-->
+                <div class="add">
+                    <h1>Get your memories together.</h1>
+                    <br>
+                    <form method="post">
+                        <input class="login-field" placeholder="Thing to remember" required="required" autocomplete="off" name="thing" type="text">
+                        <input class="login-field" placeholder="Keywords to your reminder" required="required" autocomplete="off" name="keyword" type="text">
+                        <div class="fsize"><a class="btn btn-link Lis">CANCEL</a>
+                            <input type="submit" name="reminder" class="btn btn-link" value="CREATE">
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <!--Reminders_edit-->
+                <div class="edit">
+                    <h1>Your memory, forever.</h1>
+                    <br>
+                    <form method="post" action="/home">
+                        <input type="text" name="title" placeholder="Title" required="required" autocomplete="off">
+                        <input type="text" name="keyword" placeholder="Hints" required="required" autocomplete="off">
+                        <canvas id="canvas" width="261" height="75" oncontextmenu="return false">이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+                        <a class="btn btn-link Reset" style="color:#f43737;margin-left:-5%;font-size:13px;">RESET LEVEL</a>
+                        <br>
+                        <br>
+                        <div class="fsize">
+                            <a class="btn btn-link Lis">CANCEL</a>
+                            <input type="submit" name="reminder_edit" class="btn btn-link" value="CREATE">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- main -->
+                <div class="main">
+                    <h1>Never forget a thing, again.</h1>
+                    <br>
+                    <div class="login-help">
+                        <a href="#" class="Lis" style="margin-bottom:4%;color:#1e90ff;">YOUR REDMINDERS</a>
+                        <br><a href="/setting" class="Set">SETTINGS</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
