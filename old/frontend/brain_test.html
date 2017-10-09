@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--I LOVE RUSSIA я люблю Россию -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Nevget</title>
+    <script type="text/javascript">
+        var score=0;
+        function checkFunc() {
+            var age = document.getElementById("test_age").selectedIndex;
+            window.console.log(age);
+        }
+        
+        function calculate_s() {
+        if($('#question15 > option:selected').val()) {
+         var a = document.getElementById("question0").value;
+         var b = document.getElementById("question1").value;
+         var c = $('input:radio[name=question2]:checked').val();
+         var d = $('input:radio[name=question2]:checked').val(); 
+         var e = $('input:radio[name=question3]:checked').val(); 
+         var f = $('input:radio[name=question4]:checked').val();
+         var g = $('input:radio[name=question5]:checked').val();
+         var h = $('input:radio[name=question6]:checked').val();
+         var i = document.getElementById("question7").value;
+         var j = document.getElementById("question8").value;
+         var k = document.getElementById("question9").value;
+         var l = document.getElementById("question10").value;
+         var m = document.getElementById("question11").value;
+         var n = document.getElementById("question12").value; 
+         var o = document.getElementById("question13").value; 
+         var p = document.getElementById("question14").value; 
+         var q = document.getElementById("question15").value; 
+        
+         score +=  Number(a)+Number(b)+Number(c)+Number(d)+Number(e)+Number(f)+Number(g)+Number(h)+Number(i)+Number(j)+Number(k)+Number(l)+Number(m)+Number(n)+Number(o)+Number(p)+Number(q);}
+        else{
+        alert("끝까지 체크해주세요!");}
+        }
+    </script>
+</head>
+
+<body id="gradient">
+    <div id="logo"><div>
+
+    <section class="login-card">
+    <br><img src="./image/nevget.png"  width="200" alt="nevget"><br>
+        <h1>Get your memories together.</h1><br><div class="form_table">
+
+        <div id="q0">
+            <label class="question left_question_first" for="question0">My Age&nbsp;</label>
+            <select id="question0" name="question0" class="drop_down inline_answer">
+                <option disabled selected></option>
+                <option value="5">0-19</option> <!-- Score 5 -->
+                <option value="4">20-29</option> <!-- Score 4 -->
+                <option value="3">30-39</option> <!-- Score 3 -->
+                <option value="2">40-59</option> <!-- Score 2 -->
+                <option value="1">60+</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <!-- Score 1 -->
+        <!-- Score 2 -->
+        <!-- Score 3 -->
+        <!-- Score 4 -->
+        <!-- Score 5 -->
+
+        <!-- Score 5 -->
+        <!-- Score 4 -->
+        <!-- Score 3 -->
+        <!-- Score 2 -->
+        <!-- Score 1 -->
+
+        <!-- Score 1 -->
+        <!-- Score 5 -->
+
+        <!-- Score 5 -->
+        <!-- Score 1 -->
+
+        <!-- Score 1 -->
+        <!-- Score 3 -->
+        <!-- Score 5 -->
+
+        <form id="sub">
+        <div id="q1">
+            <label class="question left_question_first" for="question1">Education&nbsp;</label>
+            <select id="question1" name="question1" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="1">Some High School/Secondary Education: &lt; 12 years</option> <!-- Score 1 -->
+                <option value="2">Finished High School: 12 years</option> <!-- Score 2 -->
+                <option value="3">Some College/Associates Degree:  14 years</option> <!-- Score 3 -->
+                <option value="4">Bachelors Degree:  16 years</option> <!-- Score 4 -->
+                <option value="5">Masters Degree/PhD/MD/Doctorate:  18+ years</option> <!-- Score 5 -->
+            </select>
+        </div>
+
+        <div id="q2">
+            <span class="question left_question_first">I have been previously diagnosed with High Blood Pressure (Hypertension)&nbsp;</span>
+            <table class="inline_grid inline_answer">
+                <tbody><tr>
+                    <td><input type="radio" name="question2" class="multiple_choice" id="question2_0" value="1" required><label for="question2_0">Yes</label></td> <!-- Score 1 -->
+                    <td><input type="radio" name="question2" class="multiple_choice" id="question2_1" value="5"><label for="question2_1">No</label></td> <!-- Score 5 -->
+                </tr>
+                </tbody></table>
+        </div>
+
+        <div id="q3">
+            <span class="question left_question_first">I have been previously diagnosed with Heart Disease&nbsp;</span>
+            <table class="inline_grid inline_answer">
+                <tbody><tr>
+                    <td><input type="radio" name="question3" class="multiple_choice" id="question3_0" value="1" required><label for="question3_0">Yes</label></td> <!-- Score 1 -->
+                    <td><input type="radio" name="question3" class="multiple_choice" id="question3_1" value="5"><label for="question3_1">No</label></td> <!-- Score 5 -->
+                </tr>
+                </tbody></table>
+        </div>
+
+        <div id="q4">
+            <span class="question left_question_first">I have been diagnosed with High Cholesterol&nbsp;</span>
+            <table class="inline_grid inline_answer">
+                <tbody><tr>
+                    <td><input type="radio" name="question4" class="multiple_choice" id="question4_0" value="1" required><label for="question4_0">Yes</label></td> <!-- Score 1 -->
+                    <td><input type="radio" name="question4" class="multiple_choice" id="question4_1" value="5"><label for="question4_1">No</label></td> <!-- Score 5 -->
+                </tr>
+                </tbody></table>
+        </div>
+
+        <div id="q5">
+            <span class="question left_question_first">I have been previously diagnosed with Diabetes Type 2&nbsp;</span>
+            <table class="inline_grid inline_answer">
+                <tbody><tr>
+                    <td><input type="radio" name="question5" class="multiple_choice" id="question5_0" value="1"  required><label for="question5_0">Yes</label></td> <!-- Score 1 -->
+                    <td><input type="radio" name="question5" class="multiple_choice" id="question5_1" value="5" required><label for="question5_1">No</label></td> <!-- Score 5 -->
+                </tr>
+                </tbody></table>
+        </div>
+
+        <div id="q6">
+            <span class="question left_question_first">One of my PARENTS, BROTHER, SISTER have/had:&nbsp;</span>
+            <table class="inline_grid inline_answer">
+                <tbody><tr>
+                    <td><input type="radio" name="question6" class="multiple_choice" id="question6_0" value="1" required><label for="question6_0">Alzheimers or Dementia **before** Age 65- Early Onset AD</label></td> <!-- Score 1 -->
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question6" class="multiple_choice" id="question6_1" value="3" required><label for="question6_1">Alzheimers or Dementia **after** Age 65- Late Onset AD</label></td> <!-- Score 3 -->
+                </tr>
+                <tr>
+                    <td><input type="radio" name="question6" class="multiple_choice" id="question6_2" value="5" required><label for="question6_2">No Family History of Alzheimers or Dementia- No Fam History</label></td> <!-- Score 5 -->
+                </tr>
+                </tbody></table>
+        </div>
+
+        <div id="q7">
+            <label class="question left_question_first" for="question7">Diet and Food Choices&nbsp;</label>
+            <select id="question7" name="question7" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="1">I eat fast food &amp; fried food almost every day - Fast food diet</option> <!-- Score 1 -->
+                <option value="2">I eat fast food &amp; fried food 4+ times a week - Fast food diet</option> <!-- Score 2 -->
+                <option value="3">I eat fast food &amp; fried food 2+ times a week - Fast food diet</option> <!-- Score 3 -->
+                <option value="4">I eat a balanced diet - fast food rarely +   Balanced diet</option> <!-- Score 4 -->
+                <option value="5">I eat healthy - fish, nuts, fruits, vegetables + Healthy Diet</option> <!-- Score 5 -->
+            </select>
+        </div>
+
+        <div id="q8">
+            <label class="question left_question_first" for="question8">I exercise for at least 30 minutes...&nbsp;</label>
+            <select id="question8" name="question8" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">4+ times per week</option> <!-- Score 5 -->
+                <option value="4">3-4 times per week</option> <!-- Score 4 -->
+                <option value="3">2-3 times per week</option> <!-- Score 3 -->
+                <option value="2">Once a week or less</option> <!-- Score 2 -->
+                <option value="1">I don't exercise</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <div id="q9">
+            <label class="question left_question_first" for="question9">Alcohol Use - Wine, Beer, Liquor&nbsp;</label>
+            <select id="question9" name="question9" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">No alcohol use</option> <!-- Score 5 -->
+                <option value="4">Average 1-4 drinks per week-  Drink &lt; 1 per day</option> <!-- Score 4 -->
+                <option value="3">Average 5-10 drinks per week-  Drink 1 per day</option> <!-- Score 3 -->
+                <option value="2">Average 11-15 drinks per week-  Drink 2 per day</option> <!-- Score 2 -->
+                <option value="1">Average 15+ drinks per week- Drink 2+ per day</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <div id="q10">
+            <label class="question left_question_first" for="question10">Caffeine Use: Coffee, Energy Drinks, Soda &amp; Tea w/ Caffeine&nbsp;</label>
+            <select id="question10" name="question10" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">No caffeine use</option> <!-- Score 5 -->
+                <option value="4">0-1 per day</option> <!-- Score 4 -->
+                <option value="3">2-3 per day</option> <!-- Score 3 -->
+                <option value="2">4-5 per day</option> <!-- Score 2 -->
+                <option value="1">6+ per day</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <div id="q11">
+            <label class="question left_question_first" for="question11">Tobacco Use&nbsp;</label>
+            <select id="question11" name="question11" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="1">I smoke:  &gt; 1 pack a day</option> <!-- Score 1 -->
+                <option value="2">I smoke:  &lt; 1 pack a day</option> <!-- Score 2 -->
+                <option value="3">Quit &lt; 5 years</option> <!-- Score 3 -->
+                <option value="4">Quit &gt; 5 years</option> <!-- Score 4 -->
+                <option value="5">Have never smoked</option> <!-- Score 5 -->
+            </select>
+        </div>
+
+        <div id="q12">
+            <label class="question left_question_first" for="question12">I am sleep deprived:&nbsp;</label>
+            <select id="question12" name="question12" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="1">Always</option> <!-- Score 1 -->
+                <option value="2">Usually</option> <!-- Score 2 -->
+                <option value="3">Sometimes</option> <!-- Score 3 -->
+                <option value="4">Seldom</option> <!-- Score 4 -->
+                <option value="5">Never</option> <!-- Score 5 -->
+            </select>
+        </div>
+
+        <div id="q13">
+            <label class="question left_question_first" for="question13">I can count on emotional support from friends/family&nbsp;</label>
+            <select id="question13" name="question13" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">Always</option> <!-- Score 5 -->
+                <option value="4">Usually</option> <!-- Score 4 -->
+                <option value="3">Sometimes</option> <!-- Score 3 -->
+                <option value="2">Seldom</option> <!-- Score 2 -->
+                <option value="1">Never</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <div id="q14">
+            <label class="question left_question_first" for="question14">I enjoy learning new things, and putting myself in novel situations:&nbsp;</label>
+            <select id="question14" name="question14" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">Always</option> <!-- Score 5 -->
+                <option value="4">Usually</option> <!-- Score 4 -->
+                <option value="3">Sometimes</option> <!-- Score 3 -->
+                <option value="2">Seldom</option> <!-- Score 2 -->
+                <option value="1">Never</option> <!-- Score 1 -->
+            </select>
+        </div>
+
+        <div id="q15" >
+            <label class="question left_question_first" for="question15">I have a positive outlook on life:&nbsp;</label>
+            <select id="question15" name="question15" class="drop_down inline_answer" required>
+                <option disabled selected></option>
+                <option value="5">Always</option> <!-- Score 5 -->
+                <option value="4">Usually</option> <!-- Score 4 -->
+                <option value="3">Sometimes</option> <!-- Score 3 -->
+                <option value="2">Seldom</option> <!-- Score 2 -->
+                <option value="1">Never</option> <!-- Score 1 -->
+            </select>
+        </div>
+         <input type="submit" class="btn btn-primary" style="display: table; margin-left: auto; margin-right: auto; margin-top:25px" value="SUBMIT" onclick="calculate_s();">
+            </form>
+
+    </div>
+    </section>
+        </div>
+    </div>
+     
+
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

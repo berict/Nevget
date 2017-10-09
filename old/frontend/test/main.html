@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevget</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script type="text/javascript">
+
+    function drawGradient() {
+
+    }
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var grd = ctx.createRadialGradient(150, 150, 0, 150, 150, 200);
+    grd.addColorStop(0, "blue");
+    grd.addColorStop(1, "white");
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, 300, 300);
+
+</script>
+</body>
+</html>
