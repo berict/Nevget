@@ -1,0 +1,13 @@
+age
+education
+gender
+high blood pressure
+diagnosed with heart disease
+high cholesterol
+diabetes type 2
+one of the family members has;
+	alzheimers or dementia < age 65
+	alzheimers or dementia >= age 65
+	none
+apolipoprotein E?
+concussion
